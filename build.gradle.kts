@@ -10,7 +10,7 @@ plugins {
 	id("io.gitlab.arturbosch.detekt")
 }
 
-group = "nl.meneerdegroot"
+group = "com.pkg-dot-zip"
 version = "1.0.0"
 
 repositories {
