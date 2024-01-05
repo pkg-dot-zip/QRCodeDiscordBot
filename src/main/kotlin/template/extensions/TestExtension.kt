@@ -67,6 +67,21 @@ class TestExtension : Extension() {
 				}
 			}
 		}
+
+		publicSlashCommand {
+			name = "QRStop"
+			description = "Stops the bot"
+
+			guild(TEST_SERVER_ID)  // Otherwise it will take up to an hour to update
+
+			action {
+				respond {
+					content = "${event.interaction.user.mention} stopped the QRBot."
+				}
+
+				bot.stop()
+			}
+		}
 	}
 
 	inner class SlapArgs : Arguments() {
