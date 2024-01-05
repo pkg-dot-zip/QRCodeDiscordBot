@@ -1,54 +1,68 @@
-# KordEx Bot Template
+<p align="center">
+  <a href="https://github.com/pkg-dot-zip/QRCodeDiscordBot/" rel="noopener">
+ <img width=200px height=200px src="https://avatars.githubusercontent.com/u/52533705?v=4" alt="Project logo"></a>
+</p>
 
-This repository contains a basic KordEx example bot for you to use as a template for your own KordEx bots. This
-includes the following:
+<h3 align="center">QRCodeDiscordBot</h3>
 
-* A basic extension that allows you to slap other people, using both message commands and slash commands.
-* A basic bot configuration that enables slash commands and shows you how to conditionally provide a different
-  message command prefix for different guilds.
-* A Gradle Kotlin build script that uses the Kotlin Discord public maven repo, Detekt for linting (with a
-  fairly strict configuration) and a Git commit hook plugin that runs Detekt when you make a commit - this uses Gradle
-  7's new version catalog feature, for easy configuration of dependencies.
-* GitHub CI scripts that build the bot and publish its artefacts.
-* A reasonable `.gitignore` file, including one in the `.idea` folder that ignores files that you shouldn't commit -
-  if you're using IDEA yourself, you should install the Ignore plugin to handle changes to this for you.
-* A Groovy-based Logback config, so you've reasonable logging out of the box.
+<div align="center">
 
-**Note:** This template includes a `.editorconfig` file that defaults to using tabs for indentation in almost all file
-types. This is because tabs are more accessible for the blind, or those with impaired vision. We won't accept
-feedback or PRs targeting this approach.
+  [![Stars](https://img.shields.io/github/stars/pkg-dot-zip/QRCodeDiscordBot.svg)](https://github.com/pkg-dot-zip/QRCodeDiscordBot/stargazers)
+  [![GitHub Issues](https://img.shields.io/github/issues/pkg-dot-zip/QRCodeDiscordBot.svg)](https://github.com/pkg-dot-zip/QRCodeDiscordBot/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/pkg-dot-zip/QRCodeDiscordBot.svg)](https://github.com/pkg-dot-zip/QRCodeDiscordBot/pulls)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-## Potential Changes
+</div>
 
-* The `.yml` files in `.github/` are used to configure GitHub apps. If you're not using them, you can remove them.
-* The provided `LICENSE` file contains The Unlicense, which makes this repository public domain. You will probably want
-  to change this - we suggest looking at [Choose a License](https://choosealicense.com/) if you're not sure where to start.
-* In the `build.gradle.kts`:
-	* Set the `group` and `version` properties as appropriate.
-	* If you're not using this to test KordEx builds, you can remove the `mavenLocal()` from the `repositories` block.
-	* In the `application` and `tasks.jar` blocks, update the main class path/name as appropriate.
-	* To target a newer/older Java version, change the options in the `KotlinCompile` configuration and `java` blocks
-* In the `settings.gradle.kts`, update the name of the root project as appropriate.
-* The bundled Detekt config is pretty strict - you can check over `detekt.yml` if you want to change it, but you need to
-  follow the TODOs in that file regardless.
-* The Logback configuration is in `src/main/resources/logback.groovy`. If the logging setup doesn't suit, you can change
-  it there.
+---
 
-## Bundled Bot
+<p align="center"> A QR-code generating Discord bot written in Kotlin using <a href=""https://github.com/kordlib/kord>Kord</a>.
+    <br> 
+</p>
 
-* `App.kt` includes a basic bot, which uses environment variables (or variables in a `.env` file) for the testing guild
-  ID (`TEST_SERVER`) and the bot's token (`TOKEN`). You can specify these either directly as environment variables, or
-  as `KEY=value` pairs in a file named `.env`. Some example code is also included that shows one potential way of
-  providing different command prefixes for different servers.
-* `TestExtension.kt` includes an example extension that creates a `slap` command - this command works as both a
-  message command and slash command, and allows you to slap other users with whatever you wish, defaulting to a
-  `large, smelly trout`.
+## 📝 Table of Contents
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Usage](#usage)
+- [Built Using](#built_using)
+- [Authors](#authors)
 
-To test the bot, we recommend using a `.env` file that looks like the following:
+## 🧐 About <a name = "about"></a>
+**QRCodeDiscordBot** is a [Discord](https://discord.com/) bot for generating QR-codes, programming in [Kotlin](https://kotlinlang.org/) using [Kord](https://github.com/kordlib/kord). I created this because of my unwarranted love for QR-codes & Kotlin, while also wanting to learn how to create Discord bots due to the increasing demand of these bots. The bot itself is quite simple; everything was setup and running in an hour. 
 
-```dotenv
-TOKEN=abc...
-TEST_SERVER=123...
-```
+You need to run this bot yourself, since I don't host it anywhere. Fortunately, this is a very simple task.
 
-Create this file, fill it out, and run the `run` gradle task for testing in development.
+## 🏁 Getting Started <a name = "getting_started"></a>
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+What things you need to install the software. If you are a developer already you probably have these components installed.
+
+- An IDE for Kotlin development. I used IntelliJ Ultimate Edition _(2023.3.2)_, and recommend you use [IntelliJ](https://www.jetbrains.com/idea/download/?section=windows) as well.
+- Java installed. This project targets version 17 on the JVM.
+
+### Installing
+A step by step series of examples that tell you how to get a development env running.
+
+1. Enable the developer mode for you account in your Discord application (this can also be done on mobile). 
+2. Go to the [developer portal](https://discord.com/developers/applications).
+3. Create a new application. Make sure to name the bot appropriately.
+4. Navigate to the “Bot” tab to configure it.
+5. Create a ".env" file in the top of the project directory.
+6. Put variables for _TEST_SERVER_ & _TOKEN_. _TEST_SERVER_ being your server's ID & _TOKEN_ being your bot's token from your developer portal. If this step confuses you check out [this](https://github.com/Kord-Extensions/template) page.
+7. Run the project.
+
+## 🎈 Usage <a name="usage"></a>
+Use _/qrgen [CONTENTS]_ to generate a QR-code of the given content.
+
+Use _/qrstop_ to stop the bot.
+
+## ⛏️ Built Using <a name = "built_using"></a>
+- [Kotlin](https://kotlinlang.org/) - Language used to program the bot in
+- [Kord](https://github.com/kordlib/kord) - Modularized implementation of the Discord API
+- [Kord Essentials Template](https://github.com/Kord-Extensions/template/) - Template used
+
+## ✍️ Authors <a name = "authors"></a>
+- [@OnsPetruske](https://github.com/pkg-dot-zip) - Idea & Initial work
+
+See also the list of [contributors](https://github.com/pkg-dot-zip/QRCodeDiscordBot/contributors) who participated in this project.

@@ -10,8 +10,8 @@ plugins {
 	id("io.gitlab.arturbosch.detekt")
 }
 
-group = "template"
-version = "1.0-SNAPSHOT"
+group = "com.pkg-dot-zip"
+version = "1.0.0"
 
 repositories {
 	google()
@@ -44,7 +44,7 @@ dependencies {
 }
 
 application {
-	mainClass.set("template.AppKt")
+	mainClass.set("qrcodediscordbot.AppKt")
 }
 
 tasks.withType<KotlinCompile> {
@@ -57,7 +57,7 @@ tasks.withType<KotlinCompile> {
 tasks.jar {
 	manifest {
 		attributes(
-			"Main-Class" to "template.AppKt"
+			"Main-Class" to "qrcodediscordbot.AppKt"
 		)
 	}
 }
