@@ -13,27 +13,13 @@ private val TOKEN = env("TOKEN")   // Get the bot' token from the env vars or a 
 
 suspend fun main() {
 	val bot = ExtensibleBot(TOKEN) {
-		chatCommands {
-			defaultPrefix = "?"
-			enabled = true
-
-			prefix { default ->
-				if (guildId == YOUR_SERVER_ID) {
-					// For the test server, we use ! as the command prefix
-					"!"
-				} else {
-					// For other servers, we use the configured default prefix
-					default
-				}
-			}
-		}
-
 		// Puts "Listening to you" under the bots' username.
 		presence {
 			this.listening("you")
 		}
 
 		extensions {
+			// Contains the commands of the bot.
 			add(::QRCodeExtension)
 		}
 	}
