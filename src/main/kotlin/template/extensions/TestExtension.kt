@@ -3,12 +3,14 @@ package template.extensions
 import com.kotlindiscord.kord.extensions.commands.Arguments
 import com.kotlindiscord.kord.extensions.commands.converters.impl.coalescingDefaultingString
 import com.kotlindiscord.kord.extensions.commands.converters.impl.defaultingString
+import com.kotlindiscord.kord.extensions.commands.converters.impl.string
 import com.kotlindiscord.kord.extensions.commands.converters.impl.user
 import com.kotlindiscord.kord.extensions.extensions.Extension
 import com.kotlindiscord.kord.extensions.extensions.chatCommand
 import com.kotlindiscord.kord.extensions.extensions.publicSlashCommand
 import com.kotlindiscord.kord.extensions.types.respond
 import com.kotlindiscord.kord.extensions.utils.respond
+import dev.kord.rest.builder.message.create.embed
 import template.TEST_SERVER_ID
 
 class TestExtension : Extension() {
@@ -52,6 +54,19 @@ class TestExtension : Extension() {
 				}
 			}
 		}
+
+		publicSlashCommand(::QRGenSlashArgs) {
+			name = "QRGen"
+			description = "Generates"
+
+			guild(TEST_SERVER_ID)  // Otherwise it will take up to an hour to update
+
+			action {
+				respond {
+					content = arguments.contents
+				}
+			}
+		}
 	}
 
 	inner class SlapArgs : Arguments() {
@@ -65,6 +80,14 @@ class TestExtension : Extension() {
 
 			defaultValue = "large, smelly trout"
 			description = "What you want to slap with"
+		}
+	}
+
+	inner class QRGenSlashArgs : Arguments() {
+		val contents by string {
+			name = "contents"
+
+			description = "String to generate QR code for"
 		}
 	}
 

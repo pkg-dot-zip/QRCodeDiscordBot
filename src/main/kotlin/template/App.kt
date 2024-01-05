@@ -31,6 +31,11 @@ suspend fun main() {
 			}
 		}
 
+		// Puts "Listening to you" under the bots' username.
+		presence {
+			this.listening("you")
+		}
+
 		extensions {
 			add(::TestExtension)
 		}
