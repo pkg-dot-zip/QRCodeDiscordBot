@@ -28,7 +28,7 @@
 - [Authors](#authors)
 
 ## 🧐 About <a name = "about"></a>
-**QRCodeDiscordBot** is a [Discord](https://discord.com/) bot for generating QR-codes, programming in [Kotlin](https://kotlinlang.org/) using [Kord](https://github.com/kordlib/kord). I created this because of my unwarranted love for QR-codes & Kotlin, while also wanting to learn how to create Discord bots due to the increasing demand of these bots. The bot itself is quite simple; everything was setup and running in an hour. 
+**QRCodeDiscordBot** is a [Discord](https://discord.com/) bot for generating QR-codes, programmed in [Kotlin](https://kotlinlang.org/) using [Kord](https://github.com/kordlib/kord). I created this because of my unwarranted love for QR-codes & Kotlin, while also wanting to learn how to create Discord bots due to the increasing demand of these bots. The bot itself is quite simple; everything was setup and running in an hour. 
 
 You need to run this bot yourself, since I don't host it anywhere. Fortunately, this is a very simple task.
 
