@@ -10,8 +10,8 @@ plugins {
 	id("io.gitlab.arturbosch.detekt")
 }
 
-group = "template"
-version = "1.0-SNAPSHOT"
+group = "nl.meneerdegroot"
+version = "1.0.0"
 
 repositories {
 	google()
