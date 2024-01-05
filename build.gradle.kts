@@ -44,7 +44,7 @@ dependencies {
 }
 
 application {
-	mainClass.set("template.AppKt")
+	mainClass.set("qrcodediscordbot.AppKt")
 }
 
 tasks.withType<KotlinCompile> {
@@ -57,7 +57,7 @@ tasks.withType<KotlinCompile> {
 tasks.jar {
 	manifest {
 		attributes(
-			"Main-Class" to "template.AppKt"
+			"Main-Class" to "qrcodediscordbot.AppKt"
 		)
 	}
 }

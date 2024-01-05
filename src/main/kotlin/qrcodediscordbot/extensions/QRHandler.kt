@@ -1,4 +1,4 @@
-package template.extensions
+package qrcodediscordbot.extensions
 
 class QRHandler {
 	companion object {
