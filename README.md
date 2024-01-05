@@ -61,7 +61,7 @@ Use _/qrstop_ to stop the bot.
 - [Kotlin](https://kotlinlang.org/) - Language used to program the bot in
 - [Kord](https://github.com/kordlib/kord) - Modularized implementation of the Discord API
 - [Kord Essentials Template](https://github.com/Kord-Extensions/template/) - Template used
-- [QR code API](https://goqr.me/api/) - API used for retrieving QR-codes.
+- [QR code API](https://goqr.me/api/) - API used for retrieving QR-codes
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@OnsPetruske](https://github.com/pkg-dot-zip) - Idea & Initial work
