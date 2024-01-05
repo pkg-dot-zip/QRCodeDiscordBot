@@ -5,24 +5,26 @@ import com.kotlindiscord.kord.extensions.commands.converters.impl.string
 import com.kotlindiscord.kord.extensions.extensions.Extension
 import com.kotlindiscord.kord.extensions.extensions.publicSlashCommand
 import com.kotlindiscord.kord.extensions.types.respond
-import template.TEST_SERVER_ID
+import template.YOUR_SERVER_ID
 
 class QRCodeExtension : Extension() {
-	override val name = "test"
+	override val name = "qrcode"
 
 	override suspend fun setup() {
 		publicSlashCommand(::QRGenSlashArgs) {
 			name = "QRGen"
 			description = "Generates"
 
-			guild(TEST_SERVER_ID)  // Otherwise it will take up to an hour to update.
+			guild(YOUR_SERVER_ID)  // Otherwise it will take up to an hour to update.
 
-			// Here we send
+			// Here we send 2 separate messages.
 			action {
+				// Only contains text, stating what content the QR contains & who requested it.
 				respond {
-					content = "Creating QRCode for ${arguments.contents} requested by ${event.interaction.user.mention}"
+					content = "Creating QR-code for ${arguments.contents} requested by ${event.interaction.user.mention}"
 				}
 
+				// Contains the image of the QR. This will embed nicely on Discord.
 				respond {
 					content = QRHandler.createQRCodeFor(arguments.contents)
 				}
@@ -33,7 +35,7 @@ class QRCodeExtension : Extension() {
 			name = "QRStop"
 			description = "Stops the bot"
 
-			guild(TEST_SERVER_ID)  // Otherwise it will take up to an hour to update
+			guild(YOUR_SERVER_ID)  // Otherwise it will take up to an hour to update
 
 			action {
 				respond {

@@ -5,7 +5,7 @@ import com.kotlindiscord.kord.extensions.utils.env
 import dev.kord.common.entity.Snowflake
 import template.extensions.QRCodeExtension
 
-val TEST_SERVER_ID = Snowflake(
+val YOUR_SERVER_ID = Snowflake(
 	env("TEST_SERVER").toLong()  // Get the test server ID from the env vars or a .env file.
 )
 
@@ -18,7 +18,7 @@ suspend fun main() {
 			enabled = true
 
 			prefix { default ->
-				if (guildId == TEST_SERVER_ID) {
+				if (guildId == YOUR_SERVER_ID) {
 					// For the test server, we use ! as the command prefix
 					"!"
 				} else {
