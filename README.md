@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/pkg-dot-zip/QRCodeDiscordBot/" rel="noopener">
- <img width=200px height=200px src="https://avatars.githubusercontent.com/u/52533705?v=4" alt="Project logo"></a>
+ <img width=400px height=400px src="https://raw.githubusercontent.com/pkg-dot-zip/QRCodeDiscordBot/root/projectLogoQR.png" alt="Project logo"></a>
 </p>
 
 <h3 align="center">QRCodeDiscordBot</h3>
