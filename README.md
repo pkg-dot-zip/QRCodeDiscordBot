@@ -64,6 +64,6 @@ Use _/qrstop_ to stop the bot.
 - [QR code API](https://goqr.me/api/) - API used for retrieving QR-codes
 
 ## ✍️ Authors <a name = "authors"></a>
-- [@OnsPetruske](https://github.com/pkg-dot-zip) - Idea & Initial work
+- [@pkg-dot-zip](https://github.com/pkg-dot-zip) - Idea & Initial work
 
 See also the list of [contributors](https://github.com/pkg-dot-zip/QRCodeDiscordBot/contributors) who participated in this project.
